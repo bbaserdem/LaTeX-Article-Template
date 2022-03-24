@@ -1,0 +1,55 @@
+\documentclass[12pt,titlepage]{article}
+
+% Used packages
+\usepackage{lingmacros}
+\usepackage{tree-dvips}
+\usepackage{import}
+\usepackage{lipsum} % For placeholder stuff.
+\usepackage[
+  backend       = biber,
+  style         = numeric,
+  maxbibnames   = 4,
+  minbibnames   = 4,
+  maxcitenames  = 1,
+  mincitenames  = 1,
+  url           = false,
+]{biblatex}
+\addbibresource{reference/publications.bib}
+% For figures
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+% For equations
+\usepackage{amsmath}
+% For typesetting titles
+\usepackage{titlesec}
+\usepackage{titletoc}
+% For comment blocks
+\usepackage{comment}
+
+% Variable definitions
+\newcommand{\myName}{Batuhan Baserdem}
+\newcommand{\myTitle}{Template LaTeX Article}
+
+% Document definitons
+\title{\myTitle\thanks{Change the title in main.tex}}
+\author{\myName\thanks{Can be changed in main.tex}}
+
+% Document generation
+\begin{document}
+\pagenumbering{arabic}
+% Reduce hypenation use
+\hyphenpenalty=5000
+\exhyphenpenalty=10000
+\emergencystretch=20pt
+
+% Title
+\maketitle
+
+% Content (use the same syntax to add different files)
+\import{chapters/}{intro.tex}
+
+% Additional stuff
+\import{parts/}{sources.tex}
+
+\end{document}
